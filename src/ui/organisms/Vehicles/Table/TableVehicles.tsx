@@ -51,6 +51,11 @@ const Table = ({data}: ITableProps) => {
         setIsModalOpen(false);
         setSelectedVehicle(null);  
       };
+      const handleDetailsClick = (id: number) => {
+        return () => {
+          router.push(`/vehicles/${id}`);
+        };
+      };
 
       return (
         <>
@@ -67,6 +72,7 @@ const Table = ({data}: ITableProps) => {
                             licensePlate={vehicle.licensePlate}
                             onDelete={()=> handleDelete(vehicle.id)} 
                             onEdit={handleEdit}
+                            onDetails={handleDetailsClick (vehicle.id)}
                         />
                     ))}
                 </tbody>

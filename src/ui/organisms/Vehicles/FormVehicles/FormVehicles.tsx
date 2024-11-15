@@ -75,7 +75,7 @@ const VehicleForm = ({ initialData, onClose }: IVehiclesFormProps) => {
       <Text classname={styles.h1}>Agregar nuevo vehículo</Text>
 
 
-      <div className={styles.divInputs}>
+
       <FormField<IVehiclesRequest>
         control={control}
         type="text"
@@ -93,9 +93,7 @@ const VehicleForm = ({ initialData, onClose }: IVehiclesFormProps) => {
         error={errors.model}
         placeholder="Ingrese el modelo"
       />
-      </div>
-      
-      <div className={styles.divInputs}>
+
       <FormField<IVehiclesRequest>
         control={control}
         type="text"
@@ -113,7 +111,7 @@ const VehicleForm = ({ initialData, onClose }: IVehiclesFormProps) => {
         error={errors.licensePlate}
         placeholder="Ingrese el número de licencia"
       />
-      </div>
+
       
       <div>
         <FormFileField<IVehiclesRequest>

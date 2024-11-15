@@ -56,4 +56,14 @@ export class VehiclesService  {
         }
     }
 
+    async getVehicleById(id: number): Promise<IVehiclesResponse> {
+        try {
+          const vehicle = await this.httpClient.getById<IVehiclesResponse>(id);
+          return vehicle;
+        } catch (error) {
+          console.error("Error al obtener el vehículo:", error);
+          throw error;
+        }
+      }
+
 }

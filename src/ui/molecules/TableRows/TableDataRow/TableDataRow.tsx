@@ -11,9 +11,10 @@ interface TableRowProps {
     licensePlate: string;
     onEdit: () => void;
     onDelete: () => void;
+    onDetails: () => void;
 }
 
-const TableRow: React.FC<TableRowProps> = ({ photo, make, model, year, licensePlate, onEdit, onDelete})  => {
+const TableRow: React.FC<TableRowProps> = ({ photo, make, model, year, licensePlate, onEdit, onDelete, onDetails})  => {
     return (
         <TableDataRow classname={styles.tr}>
             <TableDataCell classname={styles.td}>
@@ -27,7 +28,7 @@ const TableRow: React.FC<TableRowProps> = ({ photo, make, model, year, licensePl
             <TableDataCell classname={styles.td}>{model}</TableDataCell>
             <TableDataCell classname={styles.td}>{year}</TableDataCell>
             <TableDataCell classname={styles.td}>{licensePlate}</TableDataCell>
-            <TableDataCell classname={styles.td}><ActionButtons onEdit={onEdit} onDelete={onDelete}/></TableDataCell> 
+            <TableDataCell classname={styles.td}><ActionButtons onEdit={onEdit} onDelete={onDelete} onDetails={onDetails}/></TableDataCell> 
         </TableDataRow>
     );
 }

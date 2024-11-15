@@ -44,6 +44,17 @@ export class HttpClient {
     return this.handleResponse(response)
   }
 
+  async getById<T>(id: number): Promise<T> {
+    const headers = await this.getHeader();
+    const response = await fetch(`${this.baseUrl}/vehicles/${id}`, {
+      headers: headers,
+      method: "GET",
+      cache: "no-store"
+    });
+  
+    return this.handleResponse(response);
+  }
+
   async delete <T> (url: string): Promise<T> {
     console.log("URL del auto DELETE:", url);  
     const headers = await this.getHeader();
