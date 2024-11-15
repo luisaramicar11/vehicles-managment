@@ -30,6 +30,7 @@ export class HttpClient {
       const errorData = await response.json();
       throw errorData;
     }
+    console.log(response)
     return await response.json();
   }
 

@@ -1,5 +1,5 @@
 import { Control, Controller, FieldError, FieldValues, Path } from "react-hook-form";
-import styles from "./FormFileField.module.scss"
+import styles from "./FormFieldFile.module.scss"
 
 interface IPropsSelectFile<T extends FieldValues> {
     label: string;
